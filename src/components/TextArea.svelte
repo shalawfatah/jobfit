@@ -9,5 +9,5 @@
 
 <div class="w-full">
     <p>{label}</p>
-    <input type="text" placeholder={placeholder} value={value} class="input w-full" />
+    <textarea placeholder={placeholder} value={value} class="textarea w-full" />
 </div>
