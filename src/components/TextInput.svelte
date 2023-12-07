@@ -5,9 +5,25 @@
     export let value;
     /** @type {string} */
     export let placeholder;
+
+    import { createEventDispatcher } from 'svelte';
+
+    const dispatch = createEventDispatcher();
+
+    // Function to handle input changes and emit an event
+    function handleInput(event) {
+        const newValue = event.target.value;
+        dispatch('input', newValue);
+    }
 </script>
 
 <div class="w-full">
     <p>{label}</p>
-    <input type="text" placeholder={placeholder} value={value} class="input w-full" />
+    <input
+        type="text"
+        placeholder={placeholder}
+        value={value}
+        class="input w-full bg-transparent border-[2px] border-gray-200"
+        on:input={handleInput}
+    />
 </div>
